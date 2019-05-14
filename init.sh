@@ -3,13 +3,14 @@
 # he says we need python 2
 python --version
 apt-get update
-apt install python pip -y
+#sudo apt-get update && sudo apt-get -y upgrade
+apt install python python-pip unzip -y
 pip install --upgrade pip
 
 # install terraform
 curl -O https://releases.hashicorp.com/terraform/0.11.2/terraform_0.11.2_linux_amd64.zip
 mkdir /bin/terraform
-unzip terraform_0.11.2_linux_amd64.zip /bin/terraform
+unzip terraform_0.11.2_linux_amd64.zip -d /bin/terraform
 export PATH=$PATH:/bin/terraform
 terraform --version
 
@@ -18,7 +19,7 @@ pip install awscli --upgrade
 apt-get update
 
 # install ansible
-apt-get install software-properties-common
+apt-get install software-properties-common -y
 apt-add-repository ppa:ansible/ansible
 apt-get update
 apt-get install ansible -y 
